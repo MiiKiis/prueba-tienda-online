@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <title>{{NOMBRE_PRODUCTO}} | GeekTech</title>
+  <meta name="description" content="{{RESUMEN_CORTO_DEL_PRODUCTO}}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- Canonical y Open Graph -->
+  <link rel="canonical" href="https://tusitio.com/{{CATEGORIA}}/{{SLUG}}.html">
+  <meta property="og:title" content="{{NOMBRE_PRODUCTO}} | GeekTech">
+  <meta property="og:description" content="{{RESUMEN_CORTO_DEL_PRODUCTO}}">
+  <meta property="og:image" content="https://tusitio.com{{IMG_PRINCIPAL}}">
+  <meta property="og:type" content="product">
+
+  <link rel="stylesheet" href="/style.css">
+  <style>
+    /* Bloques reutilizables de la PDP (solo si no están ya en tu CSS global) */
+    .product-page { max-width: 1100px; margin: 0 auto; padding: 16px; }
+    .product-header { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; }
+    .product-media { display: grid; gap: 12px; }
+    .product-media img { width: 100%; aspect-ratio: 4/3; object-fit: cover; border: 1px solid rgba(255,255,255,.06); border-radius: var(--radius); }
+    .product-title { margin: 0 0 8px; }
+    .product-price { font-size: 1.4rem; margin: 8px 0 12px; }
+    .product-cta { display: flex; gap: 10px; align-items: center; margin-top: 12px; }
+    .product-meta { color: var(--text-secondary); font-size: .95rem; }
+    .product-section { margin-top: 28px; }
+    .specs { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 12px; }
+    .specs li { background: var(--surface); border: 1px solid rgba(255,255,255,.06); padding: 10px 12px; border-radius: var(--radius); }
+    @media (max-width: 900px) { .product-header { grid-template-columns: 1fr; } .specs { grid-template-columns: 1fr; } }
+  </style>
+
+  <!-- Datos estructurados Product (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org/",
+    "@type": "Product",
+    "name": "{{NOMBRE_PRODUCTO}}",
+    "image": [
+      "https://tusitio.com{{IMG_PRINCIPAL}}"
+    ],
+    "description": "{{RESUMEN_CORTO_DEL_PRODUCTO}}",
+    "sku": "{{SKU}}",
+    "brand": { "@type": "Brand", "name": "{{MARCA}}" },
+    "offers": {
+      "@type": "Offer",
+      "priceCurrency": "BOB",
+      "price": "{{PRECIO_NUM}}",
+      "availability": "https://schema.org/InStock",
+      "url": "https://tusitio.com/{{CATEGORIA}}/{{SLUG}}.html"
+    }
+  }
+  </script>
+</head>
+<body>
+  <div id="site-header"></div>
+
+  <main class="product-page">
+    <nav class="breadcrumbs"><a href="/{{CATEGORIA}}.html">{{CATEGORIA_TEXTO}}</a> / {{NOMBRE_PRODUCTO}}</nav>
+
+    <article itemscope itemtype="https://schema.org/Product">
+      <header class="product-header">
+        <section class="product-media">
+          <img src="{{IMG_PRINCIPAL}}" alt="{{NOMBRE_PRODUCTO}}" itemprop="image">
+          <!-- Si tienes más imágenes, agrégalas aquí -->
+          <!-- <img src="{{IMG_SECUNDARIA}}" alt="{{NOMBRE_PRODUCTO}} vista lateral"> -->
+        </section>
+
+        <section>
+          <h1 class="product-title" itemprop="name">{{NOMBRE_PRODUCTO}}</h1>
+          <div class="product-meta">SKU: <span itemprop="sku">{{SKU}}</span> · Marca: {{MARCA}}</div>
+          <p class="product-price"><span itemprop="offers" itemscope itemtype="https://schema.org/Offer"><span itemprop="priceCurrency" content="BOB">Bs</span> <span itemprop="price">{{PRECIO_NUM}}</span></span></p>
+          <p class="lead" itemprop="description">{{RESUMEN_CORTO_DEL_PRODUCTO}}</p>
+
+          <div class="product-cta">
+            <a class="btn btn-primary" href="https://wa.me/59168245693?text=Hola%20GeekTech,%20me%20interesa%20el%20SKU%20{{SKU}}" target="_blank" rel="noopener">Comprar por WhatsApp</a>
+            <a class="btn btn-outline" href="/{{CATEGORIA}}.html">Volver a {{CATEGORIA_TEXTO}}</a>
+          </div>
+        </section>
+      </header>
+
+      <section class="product-section">
+        <h2>Características</h2>
+        <ul class="specs">
+          <li>Formato: {{FORMATO}}</li>
+          <li>Switches: {{SWITCHES}}</li>
+          <li>Conectividad: {{CONECTIVIDAD}}</li>
+          <li>Iluminación: {{RGB}}</li>
+        </ul>
+      </section>
+
+      <section class="product-section">
+        <h2>Descripción</h2>
+        <p>{{DESCRIPCION_LARGA}}</p>
+      </section>
+
+      <section class="product-section">
+        <h2>Garantía y envíos</h2>
+        <p>{{GARANTIA_ENVIO}}</p>
+      </section>
+    </article>
+  </main>
+
+  <div id="site-footer"></div>
+  <script src="/assets/js/loader.js"></script>
+</body>
+</html>

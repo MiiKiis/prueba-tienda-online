@@ -1,0 +1,354 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Cámaras Web Pro | Envío 24h</title>
+  <meta name="description" content="Cámaras web Full HD y 4K con micrófono y enfoque automático. Envío 24h y garantía de 2 años." />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Estilos originales embebidos (se respetan) -->
+  <style>
+    :root {
+      --bg:#0f172a; --card:#111827; --muted:#94a3b8; --text:#e5e7eb; --brand:#22c55e; --brand-dark:#16a34a; --accent:#38bdf8;
+    }
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif;background:linear-gradient(180deg,#020617 0%,#0b1020 100%);color:var(--text)}
+    a{color:inherit;text-decoration:none}
+    .container{max-width:1100px;margin:0 auto;padding:24px}
+    header{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+    .logo{display:flex;align-items:center;gap:12px}
+    .logo-badge{width:36px;height:36px;border-radius:10px;background:linear-gradient(135deg,var(--brand),var(--accent));display:grid;place-items:center;font-weight:700;color:#041014}
+    nav{display:flex;gap:16px}
+    nav a{color:var(--muted)}
+    .btn{display:inline-block;padding:12px 18px;border-radius:10px;font-weight:600;transition:.2s ease;background:var(--brand);color:#041014}
+    .btn:hover{background:var(--brand-dark);transform:translateY(-1px)}
+    .btn-outline{background:transparent;border:1px solid #1f2937;color:var(--text)}
+    .hero{display:grid;grid-template-columns:1.2fr 1fr;gap:28px;align-items:center;padding:24px;margin-top:10px}
+    .hero-card{background:radial-gradient(1200px 500px at 20% -10%,rgba(56,189,248,.18),transparent),#0b1220;border:1px solid #1f2937;border-radius:16px;padding:24px}
+    .kicker{color:var(--accent);font-weight:600;font-size:14px;margin-bottom:6px}
+    h1{font-size:40px;line-height:1.1;margin:6px 0 10px}
+    .sub{color:var(--muted);margin:0 0 18px}
+    .price{display:flex;align-items:baseline;gap:10px;margin:10px 0 18px}
+    .price .now{font-size:30px;font-weight:700;color:#bbf7d0}
+    .price .old{color:#94a3b8;text-decoration:line-through}
+    .badges{display:flex;gap:12px;flex-wrap:wrap;margin:10px 0}
+    .badge{font-size:12px;border:1px solid #1f2937;color:#cbd5e1;padding:6px 10px;border-radius:999px;background:#0a0f1d}
+    .hero-media{background:radial-gradient(800px 400px at 70% -20%,rgba(34,197,94,.25),transparent);border:1px solid #1f2937;border-radius:16px;padding:16px;display:grid;place-items:center}
+    .hero-media img{max-width:100%;border-radius:12px;box-shadow:0 10px 40px rgba(0,0,0,.35)}
+    .trust{display:flex;gap:18px;flex-wrap:wrap;margin-top:14px}
+    .trust-item{display:flex;align-items:center;gap:8px;color:#a3a3a3;font-size:14px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+    .card{background:#0b1220;border:1px solid #1f2937;border-radius:14px;padding:16px;display:flex;flex-direction:column}
+    .card img{width:100%;height:210px;object-fit:cover;border-radius:10px;background:#0a0f1d}
+    .tag{font-size:12px;color:#67e8f9;border:1px solid #1f2937;border-radius:999px;padding:4px 8px;align-self:flex-start;margin:10px 0 6px}
+    .card h3{margin:6px 0 6px;font-size:18px}
+    .card p{color:#94a3b8;margin:0 0 10px}
+    .row{display:flex;justify-content:space-between;align-items:center;margin-top:auto}
+    .price-sm{font-weight:700}
+    .faq{margin-top:38px}
+    .faq details{background:#0b1220;border:1px solid #1f2937;border-radius:12px;padding:14px;margin-bottom:10px}
+    footer{margin:34px 0 10px;color:#6b7280;font-size:14px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px}
+    @media(max-width:960px){.hero{grid-template-columns:1fr}.grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:640px){.grid{grid-template-columns:1fr}h1{font-size:32px}}
+  </style>
+
+  <!-- Bridge: aplica estética GeekTech sin tocar estructura -->
+  <style>
+    :root{
+      --bg-primary:#0a0a0a;
+      --bg-secondary:#151515;
+      --surface:#1c1c1c;
+      --text-primary:#ffffff;
+      --text-secondary:#d8d8d8;
+      --neon-green:#00ff41;
+      --neon-cyan:#00d9ff;
+      --neon-magenta:#ff7a00;
+      --radius:14px; --radius-sm:10px; --radius-lg:22px;
+      --shadow-cyan:0 0 20px rgba(0,217,255,.35);
+      --shadow-orange:0 0 20px rgba(255,122,0,.45);
+      --shadow-green:0 0 20px rgba(0,255,65,.35);
+
+      /* mapear a variables existentes */
+      --bg: var(--bg-primary);
+      --card: var(--surface);
+      --muted: var(--text-secondary);
+      --text: var(--text-primary);
+      --brand: var(--neon-cyan);
+      --brand-dark: #0bb3d4;
+      --accent: var(--neon-magenta);
+    }
+
+    body{
+      background: linear-gradient(180deg,#0a0a0a,#0d0d14 60%,#0a0a0a 100%);
+      color: var(--text);
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+    }
+    header{
+      position: sticky; top:0; z-index:50;
+      background: rgba(12,12,18,.8);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--neon-cyan);
+      box-shadow: var(--shadow-cyan);
+    }
+    .logo-badge{
+      background: transparent;
+      border: 2px solid var(--neon-green);
+      color: var(--neon-green);
+      text-shadow: 0 0 10px var(--neon-green), 0 0 20px var(--neon-green);
+    }
+    nav a{
+      color: var(--text);
+      border: 1px solid transparent;
+      padding: 6px 10px;
+      border-radius: var(--radius-sm);
+      transition: .2s ease;
+    }
+    nav a:hover{
+      color: var(--neon-cyan);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 10px var(--neon-cyan), inset 0 0 10px rgba(0,217,255,.2);
+    }
+    .hero-card,.card,.faq details,.hero-media{
+      background: var(--surface);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 8px 24px rgba(0,0,0,.4);
+    }
+    .kicker{ color: var(--neon-cyan); }
+    h1{
+      color: var(--neon-cyan);
+      text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px var(--neon-cyan);
+    }
+    .sub{ color: var(--text-secondary); }
+    .badge,.tag{
+      background: transparent;
+      border: 1px solid var(--neon-magenta);
+      color: var(--neon-magenta);
+      border-radius: 999px;
+      box-shadow: 0 0 12px rgba(255,122,0,.35);
+    }
+    .hero-media{
+      background: radial-gradient(800px 400px at 70% -20%, rgba(0,217,255,.18), transparent);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .btn{
+      background: transparent;
+      color: var(--neon-magenta);
+      border: 2px solid var(--neon-magenta);
+      border-radius: var(--radius);
+      box-shadow: 0 0 20px var(--neon-magenta);
+      font-weight: 700; letter-spacing: .3px;
+      transition: .2s ease;
+    }
+    .btn:hover{
+      background: var(--neon-magenta);
+      color: var(--bg-primary);
+      box-shadow: 0 0 30px var(--neon-magenta), 0 0 60px var(--neon-magenta);
+    }
+    .btn.btn-outline{
+      color: var(--neon-cyan);
+      border-color: var(--neon-cyan);
+      box-shadow: 0 0 12px rgba(0,217,255,.25);
+    }
+    .btn.btn-outline:hover{
+      background: var(--neon-cyan);
+      color: var(--bg-primary);
+      box-shadow: 0 0 22px var(--neon-cyan);
+    }
+    .grid{ gap:18px; }
+    .card:hover{ transform: translateY(-2px); box-shadow: 0 12px 28px rgba(0,0,0,.5); }
+    .card img{
+      border-radius: 10px;
+      border-bottom: 2px solid var(--neon-magenta);
+      box-shadow: 0 4px 18px rgba(255,122,0,.25);
+    }
+    .card h3{ color: var(--text); }
+    .card p{ color: var(--text-secondary); }
+    .price-sm{ color: var(--neon-green); }
+    #checkout h2{ color: var(--neon-cyan); }
+    #cart-list{ color: var(--text-secondary); }
+    #cart-total{ color: var(--neon-green); }
+    footer{ color:#9aa0a6; }
+    footer a:hover{ color: var(--neon-cyan); }
+    @media(max-width:960px){ .grid{ gap:14px; } }
+    @media(max-width:640px){ h1{ text-shadow: 0 0 12px var(--neon-cyan); } }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="logo">
+        <div class="logo-badge">CW</div>
+        <strong>CámarasWeb Pro</strong>
+      </div>
+      <nav>
+        <a href="#modelos">Modelos</a>
+        <a href="#faq">FAQ</a>
+        <a href="#checkout" class="btn">Comprar</a>
+      </nav>
+    </header>
+
+    <section class="hero" id="inicio">
+      <div class="hero-card">
+        <div class="kicker">Nuevo catálogo 2025</div>
+        <h1>Video nítido y audio claro para streaming, clases y reuniones</h1>
+        <p class="sub">Cámaras Full HD y 4K con enfoque automático, reducción de ruido y compatibilidad universal con Windows, macOS y consolas de juego [Zoom, Teams, OBS]. Envío 24 h y garantía 2 años.</p>
+        <div class="price">
+          <div class="now">Desde 39,90 €</div>
+          <div class="old">Antes 59,90 €</div>
+        </div>
+        <div class="badges">
+          <span class="badge">Plug & Play USB‑C</span>
+          <span class="badge">Micrófono dual</span>
+          <span class="badge">Auto‑focus</span>
+          <span class="badge">HDR / Low‑light</span>
+          <span class="badge">Clip y trípode</span>
+        </div>
+        <div style="display:flex;gap:12px;margin-top:10px">
+          <a href="#modelos" class="btn">Ver modelos</a>
+          <a href="#checkout" class="btn btn-outline">Comprar ahora</a>
+        </div>
+        <div class="trust">
+          <div class="trust-item">✓ Pago seguro</div>
+          <div class="trust-item">✓ Devolución 30 días</div>
+          <div class="trust-item">✓ Soporte WhatsApp</div>
+          <div class="trust-item">✓ 2 años de garantía</div>
+        </div>
+      </div>
+      <div class="hero-media" aria-hidden="true">
+        <img src="img/hero-webcam.jpg" alt="Cámara web en monitor con luz ambiente" />
+      </div>
+    </section>
+
+    <section id="modelos" class="grid">
+      <article class="card">
+        <img src="img/webcam-1080p.jpg" alt="Cámara web 1080p" />
+        <span class="tag">Recomendado</span>
+        <h3>Webcam 1080p Focus</h3>
+        <p>Full HD 30 fps, micrófono dual con reducción de ruido y tapa privacidad. Ideal para clases y llamadas diarias.</p>
+        <div class="row">
+          <span class="price-sm">39,90 €</span>
+          <button class="btn btn-add" data-id="1080" data-name="Webcam 1080p Focus" data-price="39.90">Añadir</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="img/webcam-2k.jpg" alt="Cámara web 2K" />
+        <span class="tag">Calidad/Precio</span>
+        <h3>Webcam 2K Studio</h3>
+        <p>2K QHD, auto‑focus rápido, HDR y mejor desempeño en baja luz para imagen más limpia en streaming.</p>
+        <div class="row">
+          <span class="price-sm">64,90 €</span>
+          <button class="btn btn-add" data-id="2k" data-name="Webcam 2K Studio" data-price="64.90">Añadir</button>
+        </div>
+      </article>
+
+      <article class="card">
+        <img src="img/webcam-4k.jpg" alt="Cámara web 4K" />
+        <span class="tag">Streamer</span>
+        <h3>Webcam 4K Pro</h3>
+        <p>4K 30 fps, sensor grande, HDR, campo de visión variable y micrófono beamforming para creadores exigentes.</p>
+        <div class="row">
+          <span class="price-sm">129,90 €</span>
+          <button class="btn btn-add" data-id="4k" data-name="Webcam 4K Pro" data-price="129.90">Añadir</button>
+        </div>
+      </article>
+    </section>
+
+    <section class="faq" id="beneficios">
+      <details open>
+        <summary><strong>¿Es compatible con mi ordenador?</strong></summary>
+        <p>Funciona por USB en Windows, macOS y Linux sin drivers. Compatible con Zoom, Meet, Teams, OBS, Discord y consolas con captura UVC.</p>
+      </details>
+      <details>
+        <summary><strong>¿Cómo es el audio?</strong></summary>
+        <p>Micrófonos duales con reducción de ruido ambiental; para streaming profesional, se recomienda micrófono dedicado.</p>
+      </details>
+      <details>
+        <summary><strong>¿Qué incluye?</strong></summary>
+        <p>Clip para monitor, minitrípode, cable USB‑C, tapa privacidad y guía rápida. Garantía de 2 años.</p>
+      </details>
+      <details id="faq">
+        <summary><strong>Envíos y devoluciones</strong></summary>
+        <p>Envío 24/48 h nacional, devoluciones en 30 días y cambio inmediato por DOA. Soporte por correo y WhatsApp.</p>
+      </details>
+    </section>
+
+    <section id="checkout" class="hero-card" style="margin-top:24px">
+      <h2 style="margin:0 0 10px">Carrito</h2>
+      <div id="cart-list" style="color:#cbd5e1">Tu carrito está vacío.</div>
+      <div style="display:flex;gap:12px;align-items:center;margin-top:12px">
+        <div id="cart-total" style="font-weight:700">Total: 0,00 €</div>
+        <button class="btn" id="btn-pay">Finalizar compra</button>
+        <button class="btn btn-outline" id="btn-clear">Vaciar</button>
+      </div>
+      <p class="sub" style="margin-top:12px">Al finalizar, podrás pagar con tarjeta, PayPal o contra reembolso. Atención inmediata por WhatsApp.</p>
+    </section>
+
+    <footer>
+      <div>© 2025 CámarasWeb Pro</div>
+      <div><a href="#">Privacidad</a> · <a href="#">Términos</a> · <a href="#">Contacto</a></div>
+    </footer>
+  </div>
+
+  <script>
+    const cart = JSON.parse(localStorage.getItem('cart') || '[]');
+    const fmt = n => n.toLocaleString('es-ES',{style:'currency',currency:'EUR'});
+
+    function renderCart(){
+      const list = document.getElementById('cart-list');
+      if(cart.length===0){ list.textContent='Tu carrito está vacío.'; }
+      else{
+        list.innerHTML = cart.map((i,idx)=>`
+          <div style="display:flex;justify-content:space-between;align-items:center;padding:8px 0;border-bottom:1px solid #1f2937">
+            <div>
+              <div style="font-weight:600">${i.name}</div>
+              <div style="color:#94a3b8">Cantidad: 
+                <button aria-label="menos" onclick="qty(${idx},-1)" style="margin:0 6px">−</button>${i.qty}
+                <button aria-label="más" onclick="qty(${idx},1)" style="margin-left:6px">+</button>
+              </div>
+            </div>
+            <div>${fmt(i.price*i.qty)}</div>
+            <button class="btn btn-outline" onclick="removeItem(${idx})">Quitar</button>
+          </div>`).join('');
+      }
+      const total = cart.reduce((a,b)=>a+b.price*b.qty,0);
+      document.getElementById('cart-total').textContent = 'Total: ' + fmt(total);
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+    function addItem(item){
+      const found = cart.find(i=>i.id===item.id);
+      if(found) found.qty+=1; else cart.push({...item,qty:1});
+      renderCart();
+    }
+    function removeItem(idx){ cart.splice(idx,1); renderCart(); }
+    function qty(idx,delta){
+      cart[idx].qty+=delta;
+      if(cart[idx].qty<=0) removeItem(idx); else renderCart();
+    }
+    document.querySelectorAll('.btn-add').forEach(btn=>{
+      btn.addEventListener('click',()=>{
+        addItem({
+          id:btn.dataset.id,
+          name:btn.dataset.name,
+          price:parseFloat(btn.dataset.price)
+        });
+      });
+    });
+    document.getElementById('btn-clear').onclick=()=>{ cart.splice(0,cart.length); renderCart(); };
+
+    document.getElementById('btn-pay').onclick=()=>{
+      if(cart.length===0){ alert('Añade un producto al carrito.'); return; }
+      const resumen = cart.map(i=>`${i.qty}x ${i.name} - ${fmt(i.price*i.qty)}`).join('%0A');
+      const total = cart.reduce((a,b)=>a+b.price*b.qty,0);
+      const phone = '5491100000000';
+      const msg = `Hola, quiero completar la compra:%0A${resumen}%0ATotal: ${fmt(total)}`;
+      window.open(`https://wa.me/${phone}?text=${msg}`, '_blank');
+    };
+
+    renderCart();
+  </script>
+</body>
+</html>
